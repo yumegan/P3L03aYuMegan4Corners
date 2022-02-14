@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     long startTime, clicks;
     float cps;
 
+    EditText input_size;
+    Button submit_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seekBar = findViewById(R.id.seekbar);
         views = new TextView[]{tLeft, tRight, bLeft, bRight};
         layout = findViewById(R.id.activity_main_layout);
+
+        input_size = findViewById(R.id.input_size);
+        submit_btn = findViewById(R.id.submit_btn);
 
         tLeft.setOnClickListener(this);
         tRight.setOnClickListener(this);
@@ -71,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         for (TextView x:views){
                             x.setTextSize(lastProgress);
                         }
-                        Snackbar.make(layout, "Font Size Reverte Back To " + lastProgress + "sp", Snackbar.LENGTH_LONG);
+                        Snackbar.make(layout, "Font Size Reverted Back To " + lastProgress + "sp", Snackbar.LENGTH_LONG);
                     }
                 });
                 snackbar.setActionTextColor(Color.BLUE);
@@ -118,5 +125,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         setInitialValues();
+    }
+
+    public void submitSize(View view) {
+        double new_size = Double.parseDouble(String.valueOf(input_size.getText()));
+        // change size of text in textviews
+        // change location of snackbar
     }
 }

@@ -15,6 +15,8 @@
         android:tag="topLeft"
         android:textSize="@dimen/textsize"
         android:gravity="center"
+
+        android:background="@color/green_light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
@@ -25,24 +27,27 @@
         android:tag="topRight"
         android:textSize="@dimen/textsize"
         android:gravity="center"
+        android:background="@color/green_light"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/bottomleft_button"
         android:layout_width="@dimen/length"
         android:layout_height="@dimen/length"
         android:text = "0"
         android:tag="bottomLeft"
         android:textSize="@dimen/textsize"
+        android:backgroundTint="@color/green_mid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/bottomright_button"
         android:layout_width="@dimen/length"
         android:layout_height="@dimen/length"
         android:text = "0"
         android:tag="bottomRight"
         android:textSize="@dimen/textsize"
+        android:backgroundTint="@color/green_mid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
     <SeekBar
@@ -57,5 +62,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:onClick="submitSize"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/size"
+        app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/input_size_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/input_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
