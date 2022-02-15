@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">P3L03aYuMegan4Corners</string>
     <string name="size">size</string>
-    <string name="change_text_size">Change text size</string>
+    <string name="input_text_size">Input new text size: </string>
     <string name="submit">submit</string>
 </resources>

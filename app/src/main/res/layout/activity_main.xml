@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/size"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/submit_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -87,7 +87,7 @@
         android:id="@+id/input_size_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/change_text_size"
+        android:text="@string/input_text_size"
         app:layout_constraintBottom_toTopOf="@+id/input_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

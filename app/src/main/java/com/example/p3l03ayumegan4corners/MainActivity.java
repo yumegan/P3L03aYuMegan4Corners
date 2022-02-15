@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     long startTime, clicks;
     float cps;
 
+    TextView input_size_label;
     EditText input_size;
     Button submit_btn;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         views = new TextView[]{tLeft, tRight, bLeft, bRight};
         layout = findViewById(R.id.activity_main_layout);
 
+        input_size_label = findViewById(R.id.input_size_label);
         input_size = findViewById(R.id.input_size);
         submit_btn = findViewById(R.id.submit_btn);
 
@@ -128,8 +130,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void submitSize(View view) {
-        double new_size = Double.parseDouble(String.valueOf(input_size.getText()));
-        // change size of text in textviews
-        // change location of snackbar
+        int new_size = 30;
+        try {
+            new_size = Integer.parseInt(String.valueOf(input_size.getText()));
+        }
+        catch (NumberFormatException e) {
+            // It's OK to ignore "e" here because returning a default value is the documented behaviour on invalid input.
+            input_size_label.setText("Choose a number between 5 and 100");
+        }
+//        System.out.println(new_size);
+        if (new_size < 5 || new_size > 100) {
+            input_size_label.setText("Choose a number between 5 and 100");
+        }
+        else{
+
+            input_size_label.setText(getString(R.string.input_text_size));
+            seekBar.setProgress(new_size);
+
+        }
+        // 5 to 100
     }
 }
