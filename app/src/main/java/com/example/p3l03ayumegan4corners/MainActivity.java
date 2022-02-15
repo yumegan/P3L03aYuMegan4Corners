@@ -3,6 +3,7 @@ package com.example.p3l03ayumegan4corners;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -143,11 +144,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             input_size_label.setText("Choose a number between 5 and 100");
         }
         else{
-
             input_size_label.setText(getString(R.string.input_text_size));
             seekBar.setProgress(new_size);
-
         }
-        // 5 to 100
+    }
+
+    public void toLayout1(View view) {
+        Intent intent = new Intent(this, Activity1.class);
+        startActivity(intent);
     }
 }
