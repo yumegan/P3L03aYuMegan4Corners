@@ -3,4 +3,20 @@
     <string name="size">size</string>
     <string name="input_text_size">Input new text size: </string>
     <string name="submit">submit</string>
+
+    <string name="greeting_1">HELLO megan</string>
+    <string name="A">ay</string>
+    <string name="B">bee</string>
+    <string name="C">see</string>
+    <string name="D">dee</string>
+
+    <string name="uno">uno</string>
+    <string name="dos">dos</string>
+
+    <string name="go_to_layout_1">go to layout 1</string>
+    <string name="go_to_layout_2">go to layout 2</string>
+    <string name="go_to_layout_3">go to layout 3</string>
+    <string name="go_to_layout_4">go to layout 4</string>
+
+    <string name="greeting_3">hi for the third time</string>
 </resources>

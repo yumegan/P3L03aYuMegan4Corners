@@ -96,7 +96,7 @@
         android:id="@+id/layout_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go to layout 1"
+        android:text="@string/go_to_layout_1"
         android:onClick="toLayout1"
         app:layout_constraintVertical_bias=".75"
         app:layout_constraintTop_toTopOf="parent"

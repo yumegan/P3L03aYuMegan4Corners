@@ -12,4 +12,11 @@
     <color name="green_dark">#003300</color>
     <color name="green_mid">#739972</color>
     <color name="green_light">#E6FFE3</color>
+
+    <color name="blue_light">#DDF3FF</color>
+    <color name="purple_light">#EFDDFF</color>
+    <color name="pink_light">#FFDDFF</color>
+    <color name="red_light">#FFDDDF</color>
+    <color name="orange_light">#FFEDDD</color>
+    <color name="yellow_light">#FFFEDD</color>
 </resources>
