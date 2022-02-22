@@ -4,6 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity4">
+    tools:context=".Activity4"
+    android:background="@color/blue_light">
+    <Button
+        android:layout_width="@dimen/large_length"
+        android:layout_height="@dimen/large_length"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:layout_width="@dimen/small_length"
+        android:layout_height="@dimen/small_length"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintVertical_bias="0.3"
+        android:backgroundTint="@color/green_mid"/>
+    <Button
+        android:layout_width="@dimen/med_length"
+        android:layout_height="@dimen/med_length"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".17"
+        app:layout_constraintVertical_bias="0.35"
+        android:backgroundTint="@color/green_light"/>
+    <Button
+        android:layout_width="@dimen/large_length"
+        android:layout_height="@dimen/large_length"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".40"
+        app:layout_constraintVertical_bias="0.50"
+        android:text="@string/go_to_layout_5"
+        android:onClick="toLayout5"/>
+    <Button
+        android:layout_width="@dimen/small_length"
+        android:layout_height="@dimen/small_length"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".21"
+        app:layout_constraintVertical_bias="0.37"
+        android:backgroundTint="@color/green_mid"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

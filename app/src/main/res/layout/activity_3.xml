@@ -29,10 +29,10 @@
         app:layout_constraintLeft_toLeftOf="@+id/vertical"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greeting_3"
-        app:layout_constraintBottom_toTopOf="@+id/imgview_avatar"/>
+        app:layout_constraintBottom_toTopOf="@+id/imgview_compass_1"/>
 
     <ImageView
-        android:id="@+id/imgview_avatar"
+        android:id="@+id/imgview_compass_1"
         android:layout_width="@dimen/med_length"
         android:layout_height="@dimen/med_length"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,10 +40,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".5"
-        tools:srcCompat="@android:drawable/ic_menu_compass" />
+        app:srcCompat="@android:drawable/ic_menu_compass" />
 
     <ImageView
-        android:id="@+id/imgview_compass"
+        android:id="@+id/imgview_compass_2"
         android:layout_width="@dimen/med_length"
         android:layout_height="@dimen/med_length"
         app:srcCompat="@android:drawable/ic_menu_compass"

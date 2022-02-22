@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.P3L03aYuMegan4Corners">
         <activity
+            android:name=".Activity7"
+            android:exported="false" />
+        <activity
+            android:name=".Activity6"
+            android:exported="false" />
+        <activity
+            android:name=".Activity5"
+            android:exported="false" />
+        <activity
             android:name=".Activity4"
             android:exported="false" />
         <activity
