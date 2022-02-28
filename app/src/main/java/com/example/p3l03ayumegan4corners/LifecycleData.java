@@ -35,6 +35,33 @@ public class LifecycleData {
         Gson gson = new GsonBuilder().create();
         return gson.fromJson(fromSharedPreferences, LifecycleData.class);
     }
+
+    public void updateEvent(String currentEnclosingMethod) {
+        switch(currentEnclosingMethod){
+            case "onCreate":
+                onCreate++;
+                break;
+            case "onStart":
+                onCreate++;
+                break;
+            case "onResume":
+                onCreate++;
+                break;
+            case "onPause":
+                onCreate++;
+                break;
+            case "onStop":
+                onCreate++;
+                break;
+            case "onRestart":
+                onCreate++;
+                break;
+            case "onDestroy":
+                onCreate++;
+                break;
+            default:break;
+        }
+    }
 }
 
 

@@ -39,8 +39,35 @@ public class Lab05 extends AppCompatActivity {
         // instantiate TextViews
         lifeTimeTV = findViewById(R.id.lifetime);
         currentRunTV = findViewById(R.id.current);
+        // get current enclosing method name
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+
+    private void displayData() {
         // display data on TextViews
         lifeTimeTV.setText(lifeTime.toString());
         currentRunTV.setText(currentRun.toString());
     }
+
+    // convert lifetime to String and store in SharedPref
+    public void storeData(){
+        editor.putString("lifetime", lifeTime.toJSON()).apply();
+    }
+
+    public void updateCount(String currentEnclosingMethod){
+        // pass name to LifecycleData to update count
+        currentRun.updateEvent(currentEnclosingMethod);
+        lifeTime.updateEvent(currentEnclosingMethod);
+        displayData();
+        storeData();
+    }
+
+
+
+
+
+
 }
