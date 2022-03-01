@@ -59,15 +59,53 @@ public class Lab05 extends AppCompatActivity {
 
     public void updateCount(String currentEnclosingMethod){
         // pass name to LifecycleData to update count
+        System.out.println("WHAT'S HERE?? " + currentEnclosingMethod);// what method is PASSED IN?
         currentRun.updateEvent(currentEnclosingMethod);
         lifeTime.updateEvent(currentEnclosingMethod);
         displayData();
         storeData();
     }
-
-
-
-
-
-
+    protected void onStart(){
+        super.onStart();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    protected void onResume(){
+        super.onResume();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+//        System.out.println("currEnclMethod" + currentEnclosingMethod); //////////
+        updateCount(currentEnclosingMethod);
+    }
+    protected void onPause(){
+        super.onPause();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    protected void onStop(){
+        super.onStop();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    protected void onRestart(){
+        super.onRestart();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
+    protected void onDestroy(){
+        super.onDestroy();
+        String currentEnclosingMethod = new Throwable()
+                .getStackTrace()[0]
+                .getMethodName();
+        updateCount(currentEnclosingMethod);
+    }
 }

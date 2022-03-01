@@ -42,22 +42,22 @@ public class LifecycleData {
                 onCreate++;
                 break;
             case "onStart":
-                onCreate++;
+                onStart++;
                 break;
             case "onResume":
-                onCreate++;
+                onResume++;
                 break;
             case "onPause":
-                onCreate++;
+                onPause++;
                 break;
             case "onStop":
-                onCreate++;
+                onStop++;
                 break;
             case "onRestart":
-                onCreate++;
+                onRestart++;
                 break;
             case "onDestroy":
-                onCreate++;
+                onDestroy++;
                 break;
             default:break;
         }
