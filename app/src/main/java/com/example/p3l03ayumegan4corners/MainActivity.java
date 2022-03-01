@@ -158,4 +158,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, Lab05.class);
         startActivity(intent);
     }
+
+    public void toLab06(View view) {
+        Intent intent = new Intent(this, Lab06.class);
+        startActivity(intent);
+    }
 }
