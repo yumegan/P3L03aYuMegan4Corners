@@ -37,7 +37,7 @@ public class Lab06 extends AppCompatActivity {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return MainFragment.newInstance();
+            return MainFragment.newInstance(mViewPager2, position);
         }
 
         @Override
