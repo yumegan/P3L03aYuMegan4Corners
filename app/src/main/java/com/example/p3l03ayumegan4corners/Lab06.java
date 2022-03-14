@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 public class Lab06 extends AppCompatActivity {
@@ -25,7 +26,9 @@ public class Lab06 extends AppCompatActivity {
         mMyFragmentStateAdapter = new MyFragmentStateAdapter(this);
         // set the adapter for the ViewPager
         mViewPager2.setAdapter(mMyFragmentStateAdapter);
-        // gets to the end but error???
+
+        MediaPlayer song = MediaPlayer.create(Lab06.this, R.raw.sneeze);
+        song.start();
     }
 
     private class MyFragmentStateAdapter extends FragmentStateAdapter {
