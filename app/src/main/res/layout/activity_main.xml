@@ -123,6 +123,17 @@
         android:text="@string/lab06"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/lab05"
+        app:layout_constraintRight_toLeftOf="@+id/lab07"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
+    <Button
+        android:id="@+id/lab07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toLab07"
+        android:text="@string/lab07"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/lab06"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.74" />
