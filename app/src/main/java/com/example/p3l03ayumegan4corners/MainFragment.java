@@ -28,9 +28,10 @@ public class MainFragment extends Fragment {
 
     public static Fragment newInstance(ViewPager2 mViewPager2, int position) {
         MainFragment fragment = new MainFragment();
-        mViewPager2.setPageTransformer(new ZoomOutPageTransformer());
+        //mViewPager2.setPageTransformer(new ZoomOutPageTransformer());
         fragment.mViewPager2 = mViewPager2;
         fragment.position = position;
+
         return fragment;
     }
 
@@ -45,8 +46,27 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MediaPlayer song = MediaPlayer.create(getActivity(), R.raw.sneeze);
-        song.start();
+        System.out.println("position " + position);
+        switch(position){
+            case 0:
+                mp = MediaPlayer.create(getActivity(), R.raw.sneeze);
+                break;
+            case 1:
+                mp = MediaPlayer.create(getActivity(), R.raw.arcade);
+                break;
+            case 2:
+                mp = MediaPlayer.create(getActivity(), R.raw.kiss);
+                break;
+            case 3:
+                mp = MediaPlayer.create(getActivity(), R.raw.toilet);
+                break;
+            case 4:
+                mp = MediaPlayer.create(getActivity(), R.raw.eating);
+                break;
+            default:
+                mp = MediaPlayer.create(getActivity(), R.raw.sneeze);
+        }
+        mp.start();
 
 
         // add to tablayout
@@ -59,7 +79,7 @@ public class MainFragment extends Fragment {
         Button mButton = view.findViewById(R.id.pressme);
 
         //set text to identify fragment position
-        mButton.setText("Press " + position);
+        mButton.setText("Press " + (position+1));
         mButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -75,43 +95,45 @@ public class MainFragment extends Fragment {
 //    }
 }
 
-class ZoomOutPageTransformer implements ViewPager2.PageTransformer {
-    private static final float MIN_SCALE = 0.85f;
-    private static final float MIN_ALPHA = 0.5f;
-
-    public void transformPage(View view, float position) {
-
-
-        int pageWidth = view.getWidth();
-        int pageHeight = view.getHeight();
-
-        if (position < -1) { // [-Infinity,-1)
-            // This page is way off-screen to the left.
-            view.setAlpha(0f);
-
-        } else if (position <= 1) { // [-1,1]
-            // Modify the default slide transition to shrink the page as well
-            float scaleFactor = Math.max(MIN_SCALE, 1 - Math.abs(position));
-            float vertMargin = pageHeight * (1 - scaleFactor) / 2;
-            float horzMargin = pageWidth * (1 - scaleFactor) / 2;
-            if (position < 0) {
-                view.setTranslationX(horzMargin - vertMargin / 2);
-            } else {
-                view.setTranslationX(-horzMargin + vertMargin / 2);
-            }
-
-            // Scale the page down (between MIN_SCALE and 1)
-            view.setScaleX(scaleFactor);
-            view.setScaleY(scaleFactor);
-
-            // Fade the page relative to its size.
-            view.setAlpha(MIN_ALPHA +
-                    (scaleFactor - MIN_SCALE) /
-                            (1 - MIN_SCALE) * (1 - MIN_ALPHA));
-
-        } else { // (1,+Infinity]
-            // This page is way off-screen to the right.
-            view.setAlpha(0f);
-        }
-    }
-}
+//class ZoomOutPageTransformer implements ViewPager2.PageTransformer {
+//    private static final float MIN_SCALE = 0.85f;
+//    private static final float MIN_ALPHA = 0.5f;
+//    MediaPlayer mp; // unused?
+//
+//    public void transformPage(View view, float position) {
+////        mp = MediaPlayer.create(getParentActivity(), R.raw.sneeze);
+////        mp.start();
+//
+//        int pageWidth = view.getWidth();
+//        int pageHeight = view.getHeight();
+//
+//        if (position < -1) { // [-Infinity,-1)
+//            // This page is way off-screen to the left.
+//            view.setAlpha(0f);
+//
+//        } else if (position <= 1) { // [-1,1]
+//            // Modify the default slide transition to shrink the page as well
+//            float scaleFactor = Math.max(MIN_SCALE, 1 - Math.abs(position));
+//            float vertMargin = pageHeight * (1 - scaleFactor) / 2;
+//            float horzMargin = pageWidth * (1 - scaleFactor) / 2;
+//            if (position < 0) {
+//                view.setTranslationX(horzMargin - vertMargin / 2);
+//            } else {
+//                view.setTranslationX(-horzMargin + vertMargin / 2);
+//            }
+//
+//            // Scale the page down (between MIN_SCALE and 1)
+//            view.setScaleX(scaleFactor);
+//            view.setScaleY(scaleFactor);
+//
+//            // Fade the page relative to its size.
+//            view.setAlpha(MIN_ALPHA +
+//                    (scaleFactor - MIN_SCALE) /
+//                            (1 - MIN_SCALE) * (1 - MIN_ALPHA));
+//
+//        } else { // (1,+Infinity]
+//            // This page is way off-screen to the right.
+//            view.setAlpha(0f);
+//        }
+//    }
+//}
