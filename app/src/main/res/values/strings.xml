@@ -34,4 +34,8 @@ Spread love everywhere you go. Let no one ever come to you without leaving happi
     <string name="lab06">lab06</string>
     <string name="lab07">lab07</string>
 
+    <string name="greeting_lab07">\"hey.. \"</string>
+    <string name="click_me">Click me</string>
+    <string name="greeting2_lab07">you rock</string>
+
 </resources>
