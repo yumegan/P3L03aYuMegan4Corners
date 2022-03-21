@@ -34,8 +34,10 @@ public class FragmentB extends Fragment {
         int age = getArguments().getInt("MyAge", 10000000);
         String name = getArguments().getString("MyName", "Megan Thee Stallion");
         TextView textview = view.findViewById(R.id.b_textview);
-        textview.setText(R.string.greeting_lab07);
+        String greeting = getString(R.string.greeting_lab07, name);
+        textview.setText(greeting);
         Button button = view.findViewById(R.id.b_button);
-        button.setText(R.string.click_me);
+        String count = getString(R.string.click_me, age);
+        button.setText(count);
     }
 }
